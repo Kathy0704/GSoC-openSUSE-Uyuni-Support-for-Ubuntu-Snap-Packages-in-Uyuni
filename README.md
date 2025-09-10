@@ -37,12 +37,12 @@ For offline installations, you need, at a minimum, the snap-revision assertion. 
 
 ## Deliverables
 
-## Design and write the RFC for supporting Ubuntu Snap packages in Uyuni
-### investigate multiple methods to enable Uyuni to support Snap:
+### Design and write the RFC for supporting Ubuntu Snap packages in Uyuni
+#### investigate multiple methods to enable Uyuni to support Snap:
 
 1. [Explore the Snap install method and the mock API method.](./doc/methods-to-support-snap-sync.md)
 
-2. [Explore using a Snap mock API (from Canonical) to introduce Snap packages into Uyuni.](./doc/methods-to-support-snap-sync.md)
+2. [Explore using a Snap Store Proxy (from Canonical) to introduce Snap packages into Uyuni.](./doc/methods-to-support-snap-sync.md)
 
 3. [Use Salt to provide Snap support.](./doc/use-salt-to-provide-snap-support.md)
 
