@@ -35,6 +35,8 @@ For offline installations, you need, at a minimum, the snap-revision assertion. 
 
 - [Sync Snap channels](https://github.com/uyuni-project/uyuni/pull/10840)
 
+- [Salt Part](https://github.com/Kathy0704/uyuni/pull/1)
+
 ## Deliverables
 
 ### Design and write the RFC for supporting Ubuntu Snap packages in Uyuni
@@ -70,10 +72,13 @@ to synchronize the channel by:
 5. Display the list of Snap package names on the web page.
 
 ![snap sync](./images/snap_sync.png)
+### Create salt state for snap
+after run sudo salt 'minion.tf.local' state.apply snaps
+the minion will poccess .snap and execute snap install pkg 
+
+- [Salt Part](https://github.com/Kathy0704/uyuni/pull/1)
 
 # Future work
-The work can mainly be divided into two parts:
 
-The first part is syncing the Snap channel, which has already been completed.
-
-The second part is implementing the Salt module and Salt state for the Salt master, which will be the focus of future coding work.
+Current approach: Uyuni first fetches package data, downloads the files, and then reads the downloaded content to extract metadata.
+Proposed for Snap: Use a metadata-first, deferred-download model—fetch Snap metadata, persist it directly to the database (skipping the download during sync), and only download the .snap when the user selects a specific package.
